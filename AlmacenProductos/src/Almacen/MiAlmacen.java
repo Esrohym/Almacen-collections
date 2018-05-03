@@ -126,7 +126,13 @@ public class MiAlmacen
     	System.out.println("Introduzca el codigo");
     	int codigo=leerEntero();
     	float precio=leerFloat();
+    	try {
     	almacen.buscarProducto(codigo).setPrecio(precio);
+    	}
+    	catch (NullPointerException n) {
+    		System.out.println("Ese producto no está en la lista");
+    		
+    	}
     }
     		
     // Incrementa el stock
